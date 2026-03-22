@@ -8,6 +8,9 @@ const main = async () => {
 
     const dogSound = animalService.makeSound("dog");
     console.log(dogSound);
+
+    const cowSound = animalService.makeSound("cow");
+    console.log(cowSound);
 };
 
 main();
