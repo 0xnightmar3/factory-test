@@ -5,6 +5,9 @@ const main = async () => {
 
     const sound = animalService.makeSound("cat");
     console.log(sound);
+
+    const dogSound = animalService.makeSound("dog");
+    console.log(dogSound);
 };
 
 main();
