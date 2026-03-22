@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "animalSound": "npm run build && node ./dist/animalSound/index.js"
+    "animalSound": "npm run build && node ./dist/animalSound/index.js",
+    "shapeCreator": "npm run build && node ./dist/shapeCreator"
   },
   "keywords": [],
   "author": "",
