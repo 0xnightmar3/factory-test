@@ -1,8 +1,8 @@
 import { Registry } from "../../../../shared/registry";
-import type { Animal, AnimalCreator, AnimalType } from "../../../types";
+import type { Animal, AnimalFactoryFn, AnimalType } from "../../../types";
 
 export class AnimalFactory {
-    constructor(private readonly registry: Registry<AnimalType, AnimalCreator>) {};
+    constructor(private readonly registry: Registry<AnimalType, AnimalFactoryFn>) {};
 
     create(type: AnimalType): Animal {
         const animalBuilder = this.registry.get(type);
