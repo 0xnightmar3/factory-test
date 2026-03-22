@@ -1,4 +1,4 @@
-import { AnimalProvider } from "../service";
+import { AnimalProvider } from "../ports";
 import { Registry } from "../../../../shared/registry";
 import type { Animal, AnimalFactoryFn, AnimalType } from "../../../types";
 

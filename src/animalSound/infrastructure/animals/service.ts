@@ -1,8 +1,5 @@
-import type { Animal, AnimalType } from "../../domain/animals/types";
-
-export interface AnimalProvider {
-    create(type: AnimalType): Animal;
-};
+import type { AnimalProvider } from "./ports";
+import type { AnimalType } from "../../domain/animals/types";
 
 export class AnimalService {
     constructor(private readonly provider: AnimalProvider) {};
