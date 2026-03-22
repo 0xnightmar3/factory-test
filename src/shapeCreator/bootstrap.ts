@@ -4,6 +4,6 @@ import { ShapeRegistry } from "./registry/shapeRegistry";
 
 export const instantiateShapeFactory = () => {
     const shapeRegistry = new ShapeRegistry();
-    shapeModules.forEach(({ type, create }) => shapeRegistry.register(type, create));
+    shapeModules.forEach(module => shapeRegistry.register(module));
     return new ShapeFactory(shapeRegistry);
 };

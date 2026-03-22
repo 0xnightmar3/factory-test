@@ -1,5 +1,8 @@
 import type { ShapeConfig, ShapeType } from "../types/shapeConfig";
 
+export type AnyShapeModule = ShapeModule<any, any>;
+export type ShapeOf<T extends ShapeType> = Shape & { type: T };
+
 export interface Shape {
     readonly type: ShapeType;
     area(): number;
@@ -7,7 +10,7 @@ export interface Shape {
     description(): string;
 };
 
-export interface ShapeModule {
-    type: ShapeType;
-    create(config: ShapeConfig): Shape;
+export interface ShapeModule<C extends ShapeConfig, S extends ShapeOf<C['type']>> {
+    type: C['type'];
+    create(config: C): S;
 };

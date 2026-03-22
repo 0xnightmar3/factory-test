@@ -1,5 +1,6 @@
-import { RectangleConfig } from "../../types/shapeConfig";
-import { Shape, ShapeModule } from "../shape";
+import { roundNumber } from "../../utils/numbers";
+import type { Shape, ShapeModule } from "../shape";
+import type { RectangleConfig } from "../../types/shapeConfig";
 
 export class Rectangle implements Shape {
     readonly type = "rectangle";
@@ -9,11 +10,11 @@ export class Rectangle implements Shape {
     };
 
     perimeter(): number {
-        return this.config.height * 2 + this.config.width * 2;
+        return roundNumber(this.config.height * 2 + this.config.width * 2);
     };
 
     area(): number {
-        return this.config.height * this.config.width;  
+        return roundNumber(this.config.height * this.config.width);
     };
 
     description(): string {
@@ -21,9 +22,9 @@ export class Rectangle implements Shape {
     };
 };
 
-export const rectangleModule: ShapeModule = {
+export const rectangleModule: ShapeModule<RectangleConfig, Rectangle> = {
     type: "rectangle",
-    create(config): Rectangle {
-        return new Rectangle(config as RectangleConfig);
+    create(config) {
+        return new Rectangle(config);
     },
 };

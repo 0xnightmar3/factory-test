@@ -1,8 +1,8 @@
-import type { Shape } from "./domain/shape";
+import type { ShapeOf } from "./domain/shape";
 import type { ShapeConfig } from "./types/shapeConfig";
 
-export type ShapeBuilder = (config: ShapeConfig) => Shape;
+export type ShapeBuilder<C extends ShapeConfig, S extends ShapeOf<C['type']>> = (config: C) => S;
 
 export interface ShapeProvider {
-    create(config: ShapeConfig): Shape;
+    create<C extends ShapeConfig>(config: C): ShapeOf<C['type']>;
 };

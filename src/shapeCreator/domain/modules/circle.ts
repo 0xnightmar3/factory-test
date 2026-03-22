@@ -22,9 +22,9 @@ export class Circle implements Shape {
     };
 };
 
-export const circleModule: ShapeModule = {
+export const circleModule: ShapeModule<CircleConfig, Circle> = {
     type: "circle",
-    create(config): Circle {
-        return new Circle(config as CircleConfig);
+    create(config) {
+        return new Circle(config);
     },
 };
