@@ -1,5 +1,5 @@
-import { AnimalModule } from "../animalModule";
 import { Animal } from "../types";
+import { AnimalModule } from "../animalModule";
 
 export class Cat implements Animal {
     speak(): string {

@@ -1,13 +1,13 @@
-import { Factory } from "../shared/factory";
 import { Registry } from "../shared/registry";
-import { Cat } from "./domain/animals/modules/cat";
-import type { Animal, AnimalType } from "./domain/animals/types";
+import { AnimalCreator, AnimalType } from "./types";
 import { AnimalService } from "./infrastructure/animals/service/service";
+import { AnimalFactory } from "./infrastructure/animals/factory/animalsFactory";
+import { AnimalRegistry, registerAnimals } from "./infrastructure/animals/registry/registerAnimals";
 
 export const buildAnimalService = (): AnimalService => {
-    const animalRegistry = new Registry<AnimalType, Animal>();
-    animalRegistry.register("cat", new Cat());
-    const animalFactory = new Factory(animalRegistry);
-    
+    const animalRegistry: AnimalRegistry = new Registry<AnimalType, AnimalCreator>();
+    registerAnimals(animalRegistry);
+    const animalFactory = new AnimalFactory(animalRegistry);
+
     return new AnimalService(animalFactory);
 };

@@ -1,8 +1,8 @@
-import type { Animal, AnimalType } from "../../../domain/animals/types";
-import type { Factory } from "../../../../shared/factory";
+import type { AnimalFactory } from "../factory/animalsFactory";
+import type { AnimalType } from "../../../domain/animals/types";
 
 export class AnimalService {
-    constructor(private readonly factory: Factory<AnimalType, Animal>) {};
+    constructor(private readonly factory: AnimalFactory) {};
 
     makeSound(type: AnimalType): string {
         const value = this.factory.create(type);
