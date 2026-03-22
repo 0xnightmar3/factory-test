@@ -1,11 +1,14 @@
-import type { AnimalType } from "../../domain/animals/types";
-import type { AnimalFactory } from "./factory/animalsFactory";
+import type { Animal, AnimalType } from "../../domain/animals/types";
+
+export interface AnimalProvider {
+    create(type: AnimalType): Animal;
+};
 
 export class AnimalService {
-    constructor(private readonly factory: AnimalFactory) {};
+    constructor(private readonly provider: AnimalProvider) {};
 
     makeSound(type: AnimalType): string {
-        const value = this.factory.create(type);
+        const value = this.provider.create(type);
         return value.speak();
     };
 };
