@@ -1,4 +1,4 @@
-import type { Animal, AnimalType } from "../../../types";
+import type { Animal, AnimalType } from "../../../domain/animals/types";
 import type { Factory } from "../../../../shared/factory";
 
 export class AnimalService {

@@ -1,7 +1,7 @@
-import { Cat } from "./domain/cat";
 import { Factory } from "../shared/factory";
 import { Registry } from "../shared/registry";
-import type { Animal, AnimalType } from "./types";
+import { Cat } from "./domain/animals/modules/cat";
+import type { Animal, AnimalType } from "./domain/animals/types";
 import { AnimalService } from "./infrastructure/animals/service/service";
 
 export const buildAnimalService = (): AnimalService => {
