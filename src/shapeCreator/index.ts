@@ -14,6 +14,14 @@ const main = async () => {
         height: 20,
     });
     console.log(rect1.description());
+
+    const tria1 = factory.create({
+        type: "triangle",
+        a: 7,
+        b: 16,
+        c: 12,
+    });
+    console.log(tria1.description());
 };
 
 main();
