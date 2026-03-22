@@ -1,11 +1,7 @@
-export type AnimalType = "dog" | "cat" | "cow";
+export type AnimalType = "cat";
 
 export interface Animal {
     speak(): string;
 };
 
-export class Cat implements Animal {
-    speak(): string {
-        return `Wiwiwiwiwiwi`;
-    };
-};
+export type AnimalCreator = () => Animal;
