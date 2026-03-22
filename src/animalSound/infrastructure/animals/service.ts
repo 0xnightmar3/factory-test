@@ -1,5 +1,5 @@
-import type { AnimalFactory } from "../factory/animalsFactory";
-import type { AnimalType } from "../../../domain/animals/types";
+import type { AnimalType } from "../../domain/animals/types";
+import type { AnimalFactory } from "./factory/animalsFactory";
 
 export class AnimalService {
     constructor(private readonly factory: AnimalFactory) {};

@@ -1,6 +1,6 @@
 import { Registry } from "../shared/registry";
 import { AnimalFactoryFn, AnimalType } from "./types";
-import { AnimalService } from "./infrastructure/animals/service/service";
+import { AnimalService } from "./infrastructure/animals/service";
 import { AnimalFactory } from "./infrastructure/animals/factory/animalsFactory";
 import { AnimalRegistry, registerAnimals } from "./infrastructure/animals/registry/registerAnimals";
 
